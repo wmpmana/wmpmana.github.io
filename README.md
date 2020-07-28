@@ -8,7 +8,8 @@
 - https://servebolt.com/articles/how-does-caching-work-in-wordpress/
 - https://developer.wordpress.org/reference/functions/wp_cache_set/
 - https://wordpress.org/support/article/optimization-caching/
-
+- https://wordpress.org/plugins/clearfy/
+- https://wordpress.org/plugins/lh-css-lazy-load/
 
 - https://pegasaas.com/critical-path-css-generator/
 
