@@ -156,7 +156,7 @@
 
 	astra_css( 'astra-settings[font-weight-primary-menu]', 'font-weight', selector );
 
-	var selector = '.main-header-menu > li > .sub-menu:first-of-type, .main-header-menu > li > .children:first-of-type, .main-header-menu > li > .astra-full-megamenu-wrapper:first-of-type';
+	var selector = '.main-header-menu > .menu-item > .sub-menu:first-of-type, .main-header-menu > .menu-item > .astra-full-megamenu-wrapper:first-of-type';
 
 	astra_generate_outside_font_family_css( 'astra-settings[font-family-primary-dropdown-menu]', selector );
 
@@ -166,17 +166,17 @@
 	
 	astra_css( 'astra-settings[line-height-primary-menu]', 'line-height', '.main-header-bar' );
 
-	astra_css( 'astra-settings[font-weight-primary-dropdown-menu]', 'font-weight', '.main-header-menu > li > .sub-menu:first-of-type, .main-header-menu > li > .children:first-of-type, .main-header-menu > li > .astra-full-megamenu-wrapper:first-of-type' );
+	astra_css( 'astra-settings[font-weight-primary-dropdown-menu]', 'font-weight', '.main-header-menu > .menu-item > .sub-menu:first-of-type, .main-header-menu > .menu-item > .astra-full-megamenu-wrapper:first-of-type' );
 	
-	astra_css( 'astra-settings[text-transform-primary-dropdown-menu]', 'text-transform', '.main-header-bar .main-header-bar-navigation .sub-menu, .main-header-bar .main-header-bar-navigation .children, .ast-header-sections-navigation .sub-menu, .ast-above-header-menu-items .sub-menu, .ast-below-header-menu-items .sub-menu' );
+	astra_css( 'astra-settings[text-transform-primary-dropdown-menu]', 'text-transform', '.main-header-bar .main-header-bar-navigation .sub-menu, .ast-header-sections-navigation .sub-menu, .ast-above-header-menu-items .sub-menu, .ast-below-header-menu-items .sub-menu' );
 	
-	astra_responsive_font_size( 'astra-settings[font-size-primary-dropdown-menu]', '.main-header-menu > li > .sub-menu:first-of-type, .main-header-menu > li > .children:first-of-type, .ast-header-sections-navigation li > .sub-menu:first-of-type, .ast-above-header-menu-items li > .sub-menu:first-of-type, .ast-below-header-menu-items li > .sub-menu:first-of-type, .main-header-menu > li > .astra-full-megamenu-wrapper:first-of-type' );
+	astra_responsive_font_size( 'astra-settings[font-size-primary-dropdown-menu]', '.main-header-menu > .menu-item > .sub-menu:first-of-type, .ast-header-sections-navigation li > .sub-menu:first-of-type, .ast-above-header-menu-items .menu-item > .sub-menu:first-of-type, .ast-below-header-menu-items li > .sub-menu:first-of-type, .main-header-menu > .menu-item > .astra-full-megamenu-wrapper:first-of-type' );
 
-	astra_css( 'astra-settings[line-height-primary-dropdown-menu]', 'line-height', '.main-header-bar .main-header-bar-navigation .sub-menu, .main-header-bar .main-header-bar-navigation .children, .ast-header-sections-navigation .sub-menu, .ast-above-header-menu-items .sub-menu, .ast-below-header-menu-items .sub-menu' );	
+	astra_css( 'astra-settings[line-height-primary-dropdown-menu]', 'line-height', '.main-header-bar .main-header-bar-navigation .sub-menu, .ast-header-sections-navigation .sub-menu, .ast-above-header-menu-items .sub-menu, .ast-below-header-menu-items .sub-menu' );	
 
 	// Footer Typo
 
-	var selector = '.main-header-menu > li > .sub-menu:first-of-type, .main-header-menu > li > .children:first-of-type, .main-header-menu > li > .astra-full-megamenu-wrapper:first-of-type';
+	var selector = '.main-header-menu > .menu-item > .sub-menu:first-of-type, .main-header-menu > .menu-item > .astra-full-megamenu-wrapper:first-of-type';
 
 	astra_generate_outside_font_family_css( 'astra-settings[font-family-footer-content]', '.ast-small-footer' );
 

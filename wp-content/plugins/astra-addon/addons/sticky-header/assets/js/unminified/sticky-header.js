@@ -123,7 +123,6 @@
 					$( document ).trigger( "addStickyClass" );
 					fixed_header.addClass('ast-header-sticked');
 
-
 				}else if ( 'slide' == self.options.header_style ) {
 					fixed_header.css({
 						'top' : gutter,
@@ -137,7 +136,6 @@
 					$( document ).trigger( "addStickyClass" );
 					fixed_header.addClass('ast-header-sticked');
 
-
 				}else if( 'fade' == self.options.header_style ) {
 					fixed_header.css({
 						'top' : gutter,
@@ -150,7 +148,6 @@
 					$('html').addClass('ast-header-stick-fade-active');
 					$( document ).trigger( "addStickyClass" );
 					fixed_header.addClass('ast-header-sticked');
-
 				}
 			} else {
 				self.stickRelease( self );
@@ -338,7 +335,6 @@
 				fixed_header.removeClass('ast-header-sticked');
 				selector.removeClass( 'ast-sticky-shrunk' ).stop();
 
-
 			}else if ( 'slide' == self.options.header_style ) {
 				fixed_header.removeClass( 'ast-sticky-active' ).stop().css({
 					'transform':'translateY(-100%)',
@@ -352,7 +348,6 @@
 				$( document ).trigger( "removeStickyClass" );
 				fixed_header.removeClass('ast-header-sticked');
 
-
 			}else if( 'fade' == self.options.header_style ) {
 				fixed_header.removeClass( 'ast-sticky-active' ).stop().css({
 					'opacity' : '0',
@@ -363,8 +358,6 @@
 				fixed_header.removeClass('ast-header-sticked');
 				$( document ).trigger( "removeStickyClass" );
 				$('html').removeClass('ast-header-stick-fade-active');
-
-
 			}
 		}
 	}
@@ -381,10 +374,7 @@
 		if ( jQuery( this.element ) ) {
 
 			var self                       	   = this,
-				selector                       = jQuery( self.element ),
-				gutter                         = parseInt( self.options.gutter ),
-				stick_upto_scroll              = selector.position().top || 0,
-				dependent_height               = 0;
+				selector                       = jQuery( self.element );
 
 			/**
 			 *	Add parent <div> wrapper with height element for smooth scroll
@@ -426,9 +416,7 @@
 			jQuery( document ).ready(function($) {
 				self.stick_me( self );
 			} );
-
 		}
-
 	};
 
 	$.fn[pluginName] = function ( options ) {
@@ -438,8 +426,6 @@
 			}
 		});
 	}
-
-
 
 	var $body = jQuery( 'body' ),
 		layout_width             = $body.width(),
@@ -452,9 +438,7 @@
 		header_above_stick_meta  = astraAddon.header_above_stick_meta || '',
 		header_below_stick_meta  = astraAddon.header_below_stick_meta || '',
 		site_layout              = astraAddon.site_layout || '',
-		site_layout_padded_width = astraAddon.site_layout_padded_width || 1200,
 		site_layout_box_width    = astraAddon.site_layout_box_width || 1200,
-		site_content_width       = astraAddon.site_content_width || 1200,
 		sticky_header_on_devices = astraAddon.sticky_header_on_devices || 'desktop',
 		sticky_header_style		 = astraAddon.sticky_header_style || 'none',
 		sticky_hide_on_scroll 	 = astraAddon.sticky_hide_on_scroll || '',
@@ -545,7 +529,6 @@
 		}
 
 		jQuery( document ).ready(function($) {
-
 
 			if ( '1' == sticky_hide_on_scroll ) {
 	    		if ( '1' == main_shrink ) {
@@ -656,7 +639,6 @@
 
 						}
 			    	}
-
 
 				}else{
 

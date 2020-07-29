@@ -15,7 +15,7 @@ function display_mega_menu_on_load() {
         }
     }
     
-    // For Menu width.
+    // For Menu Container width.
     var menu_container = document.querySelectorAll(".menu-container-width-mega");
     if ( menu_container.length > 0 ) {
         for (var i = 0; i < menu_container.length; i++) {
@@ -38,6 +38,19 @@ function display_mega_menu_on_load() {
             });
         }
     }
+
+    // For Full width Stretched.
+    var menu_full_width_stretched = document.querySelectorAll(".full-stretched-width-mega");
+    if ( menu_full_width_stretched.length > 0 ) {
+        for (var i = 0; i < menu_full_width_stretched.length; i++) {
+            menu_full_width_stretched[i].addEventListener( "mouseenter", function( event ) {
+                var mega_menu_container = event.target.querySelector(".astra-full-megamenu-wrapper");
+                var mega_menu_submenu = event.target.querySelector(".astra-mega-menu-width-full-stretched");
+                mega_menu_container.classList.remove("ast-hidden");
+                mega_menu_submenu.classList.remove("ast-hidden");
+            });
+        }
+    }
 }
 
 var items = document.getElementsByClassName('astra-megamenu-li');
@@ -51,14 +64,14 @@ var items = document.getElementsByClassName('astra-megamenu-li');
             $this            = jQuery( this );
 
         // Full width mega menu
-        if( $this.hasClass( 'full-width-mega' ) ) {
+        if( $this.hasClass( 'full-width-mega' ) || $this.hasClass( 'full-stretched-width-mega' ) ) {
             $main_container = jQuery( $main_container ).closest('.ast-container' );
         }
 
-        if ( parseInt( jQuery(window).width() ) > parseInt( astra.break_point ) ) { 
+        if ( parseInt( jQuery(window).width() ) > parseInt( astra.break_point ) ) {
 
-            var $menuWidth           = $main_container.width(),     
-                $menuPosition        = $main_container.offset(), 
+            var $menuWidth           = $main_container.width(),
+                $menuPosition        = $main_container.offset(),
                 $menuItemPosition    = $this.offset(),
                 $positionLeft        = $menuItemPosition.left - ( $menuPosition.left + parseFloat($main_container.css('paddingLeft') ) );
 
@@ -67,7 +80,21 @@ var items = document.getElementsByClassName('astra-megamenu-li');
                 $fullPositionLeft        = $menuItemPosition.left - ( $fullMenuPosition.left + parseFloat( $full_width_main_container.css( 'paddingLeft' ) ) );
 
             if( $this.hasClass( 'menu-container-width-mega' ) ) {
-                $target_container = jQuery(".main-navigation");
+
+                var menu_width_container = jQuery(".main-navigation");
+
+                if( $full_width_main_container.hasClass( 'ast-above-header' ) ) {
+                    menu_width_container = jQuery(".ast-above-header-navigation");
+                } else if( $full_width_main_container.hasClass( 'ast-below-header' ) ) {
+                    menu_width_container = jQuery(".ast-below-header-actual-nav");
+                }
+
+                if ( menu_width_container.length ) {
+                    $target_container = menu_width_container;
+                } else {
+                    $target_container = $this.parent( "ul" );
+                }
+
                 $menuWidth           = $target_container.width() + 'px';
                 var $offset_right    = jQuery(window).width() - ( $target_container.offset().left + $target_container.outerWidth() );
                 var $current_offset  = $this.offset();
@@ -77,7 +104,9 @@ var items = document.getElementsByClassName('astra-megamenu-li');
             if( $this.hasClass( 'full-width-mega' ) ) {
                 $this.find( '.astra-full-megamenu-wrapper' ).css( { 'left': '-'+$fullPositionLeft+'px', 'width': $fullMenuWidth } );
                 $this.find( '.astra-megamenu' ).css( { 'width': $menuWidth } );
-            } else{
+            } else if( $this.hasClass( 'full-stretched-width-mega' ) ) {
+                $this.find( '.astra-full-megamenu-wrapper' ).css( { 'left': '-'+$fullPositionLeft+'px', 'width': $fullMenuWidth } );
+            } else {
                 $this.find( '.astra-megamenu' ).css( { 'left': '-'+$positionLeft+'px', 'width': $menuWidth } );
             }
         } else {
@@ -96,7 +125,7 @@ var items = document.getElementsByClassName('astra-megamenu-li');
         $this            = jQuery( container );
 
     // Full width mega menu
-    if( $this.hasClass( 'full-width-mega' ) ) {
+    if( $this.hasClass( 'full-width-mega' ) || $this.hasClass( 'full-stretched-width-mega' ) ) {
         $main_container = jQuery( $main_container ).closest('.ast-container' );
     }
 
@@ -115,7 +144,21 @@ var items = document.getElementsByClassName('astra-megamenu-li');
                 $fullPositionLeft        = $menuItemPosition.left - ( $fullMenuPosition.left + parseFloat( $full_width_main_container.css( 'paddingLeft' ) ) );
 
             if( $this.hasClass( 'menu-container-width-mega' ) ) {
-                $target_container = jQuery(".main-navigation");
+
+                var menu_width_container = jQuery(".main-navigation");
+
+                if( $full_width_main_container.hasClass( 'ast-above-header' ) ) {
+                    menu_width_container = jQuery(".ast-above-header-navigation");
+                } else if( $full_width_main_container.hasClass( 'ast-below-header' ) ) {
+                    menu_width_container = jQuery(".ast-below-header-actual-nav");
+                }
+
+                if ( menu_width_container.length ) {
+                    $target_container = menu_width_container;
+                } else {
+                    $target_container = $this.parent( "ul" );
+                }
+
                 $menuWidth           = $target_container.width() + 'px';
                 var $offset_right    = jQuery(window).width() - ( $target_container.offset().left + $target_container.outerWidth() );
                 var $current_offset  = $this.offset();
@@ -125,6 +168,8 @@ var items = document.getElementsByClassName('astra-megamenu-li');
             if( $this.hasClass( 'full-width-mega' ) ) {
                 $this.find( '.astra-full-megamenu-wrapper' ).css( { 'left': '-'+$fullPositionLeft+'px', 'width': $fullMenuWidth } );
                 $this.find( '.astra-megamenu' ).css( { 'width': $menuWidth } );
+            } else if( $this.hasClass( 'full-stretched-width-mega' ) ) {
+                $this.find( '.astra-full-megamenu-wrapper' ).css( { 'left': '-'+$fullPositionLeft+'px', 'width': $fullMenuWidth } );
             } else{
                 $this.find( '.astra-megamenu' ).css( { 'left': '-'+$positionLeft+'px', 'width': $menuWidth } );
             }
@@ -152,6 +197,10 @@ var items = document.getElementsByClassName('astra-megamenu-li');
     });
 
     $this.click(function(event){
-        event.stopPropagation();
+        if ( ! jQuery(event.target).hasClass('menu-item') ){
+            return;   
+        }
+        // event.stopPropagation();
+        event.stopImmediatePropagation();
     });
 });

@@ -83,7 +83,7 @@
 }
 
 .ast-flyout-menu-enable.ast-header-break-point .main-header-bar-navigation .main-header-menu,
-.ast-flyout-menu-enable.ast-header-break-point .main-header-bar-navigation .main-header-menu ul {
+.ast-flyout-menu-enable.ast-header-break-point .main-header-bar-navigation .main-header-menu .sub-menu {
   background: transparent;
 }
 
